@@ -1,6 +1,7 @@
 Package: pwcvR2
 Type: Package
-Title: Precision-Weighted Cross-Validation for Meta-Regression R-Squared
+Title: Precision-Weighted Cross-Validation for Meta-Regression
+        R-Squared
 Version: 0.1.0
 Authors@R: c(
     person("Mahmood", "Ahmad",
@@ -20,14 +21,16 @@ Description: Provides functions for estimating cross-validated R-squared
     the heteroscedasticity inherent in meta-analytic data.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Depends: R (>= 4.0.0)
-Imports:
-    metafor (>= 3.0.0)
-Suggests:
-    testthat (>= 3.0.0),
-    metadat
+Imports: metafor (>= 3.0.0)
+Suggests: testthat (>= 3.0.0), metadat
 Config/testthat/edition: 3
 RoxygenNote: 7.3.3
 URL: https://github.com/mahmood726-cyber/pwcvR2
 BugReports: https://github.com/mahmood726-cyber/pwcvR2/issues
+NeedsCompilation: no
+Packaged: 2026-03-19 17:27:36 UTC; user
+Author: Mahmood Ahmad [aut, cre] (ORCID: YOUR-ORCID-HERE, affiliation: Royal
+    Free London NHS Foundation Trust),
+  Laiba Khan [aut] (affiliation: Independent Researcher, London, UK)
+Maintainer: Mahmood Ahmad <mahmood726@gmail.com>

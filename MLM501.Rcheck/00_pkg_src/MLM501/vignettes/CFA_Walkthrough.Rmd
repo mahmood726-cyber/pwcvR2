@@ -1,0 +1,67 @@
+---
+title: "Mapping the Evidence Frontier with MLM501"
+author: "Mahmood Ahmad"
+date: "2026-03-04"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Mapping the Evidence Frontier with MLM501}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(MLM501)
+```
+
+# Introduction
+`MLM501` is an R-based suite for auditing evidence robustness across the Cochrane database. This vignette demonstrates the workflow from loading 2,373 analyses to simulating the **Net Clinical Benefit** of a diagnostic pathway.
+
+## 1. The Global Evidence Audit
+The core of the package is the `Cochrane Fragility Atlas (CFA)`. We begin by calculating the **MAFI 2.0** scores across all specialty groups.
+
+```{r global-audit, eval=FALSE}
+# Load the comprehensive audit database
+audit_db <- calculate_global_audit_pro(MLM501_full_database)
+
+# Filter for Cardiovascular "High Fragility" cohorts
+cvd_fragile <- audit_db[audit_db$specialty == "Cardiovascular" & audit_db$MAFI > 0.6, ]
+print(head(cvd_fragile))
+```
+
+## 2. Bayesian Credibility Check
+For analyses classified as "High Fragility," we apply the Bayesian Engine to calculate 95% Credible Intervals for the fragility scores.
+
+```{r bayes-check, eval=FALSE}
+# Perform Bayesian stress-test on a target analysis
+target <- cvd_fragile[1, ]
+bayes_check <- calculate_bayesian_fragility(target$yi, target$vi)
+
+# Result: Median MAFI with Bayesian uncertainty bounds
+print(bayes_check)
+```
+
+## 3. Evidence Pathway Simulation
+Finally, we bridge these findings into a clinical pathway to calculate the real-world impact.
+
+```{r pathway-sim, eval=FALSE}
+# Simulate a Cardio-Renal pathway
+# Prevalence: 15%, HS-Troponin Sensitivity: 92%, Specificity: 88%, RR: 0.85
+pathway <- simulate_pathway(
+  prevalence = 0.15, 
+  sensitivity = 0.92, 
+  specificity = 0.88, 
+  rr = 0.85, 
+  harm_rate = 0.02
+)
+
+# Calculate Economic Value (NHS QALY metrics)
+econ_impact <- calculate_economic_impact(pathway)
+print(econ_impact$value_of_benefit_formatted)
+```
+
+# Conclusion
+By integrating non-linear evidence decay and health-economic modeling, `MLM501` identifies the "Cost of Fragility" in healthcare.

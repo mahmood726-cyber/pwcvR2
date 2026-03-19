@@ -1,0 +1,21 @@
+calculate_MAFI          Calculate MAFI (Meta-Analysis Fragility Index)
+calculate_MAFI_pro      Enhanced Predictive Metrics with Non-Linear
+                        Decay
+calculate_bayesian_fragility
+                        Bayesian Fragility & Credibility Engine
+calculate_economic_impact
+                        Calculate Economic Impact and "Cost of
+                        Fragility"
+calculate_global_audit_pro
+                        Updated Global Audit with Specialty Grouping
+calculate_global_mafi   Optimized Global Robustness Audit
+get_cohort              Select a coherent cohort for analysis
+grade_audit             GRADE Imprecision Audit (Enhanced for Reviewer
+                        2)
+plot_cohort_gg          Plot a cohort with ggplot2 (forest-style)
+plot_cohort_quick       Plot a cohort quickly (base R)
+plot_effects_gg         Forest-style plot with ggplot2
+plot_effects_quick      Quick effects plot (base R)
+read_mlm_effects        Read the multilevel effects table
+simulate_pathway        Simulate a clinical pathway from diagnosis to
+                        outcome.

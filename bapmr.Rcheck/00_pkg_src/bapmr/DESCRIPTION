@@ -1,0 +1,37 @@
+Package: bapmr
+Type: Package
+Title: Bootstrap-Aggregated Penalized Meta-Regression
+Version: 0.1.0
+Authors@R: c(
+    person("Mahmood", "Ahmad",
+           email = "mahmood726@gmail.com",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-HERE",
+                       affiliation = "Royal Free London NHS Foundation Trust")),
+    person("Laiba", "Khan",
+           role = "aut",
+           comment = c(affiliation = "Independent Researcher, London, UK"))
+  )
+Description: Implements Bootstrap-Aggregated Penalized Meta-Regression (BAP-MR)
+    for small-sample evidence synthesis. Standard regularization methods (LASSO,
+    Ridge) can paradoxically increase overfitting in meta-regression when the
+    number of studies is small relative to the number of moderators. BAP-MR
+    resolves this by averaging penalized coefficients across bootstrap resamples,
+    producing stable shrinkage and conservative estimates of heterogeneity
+    explained (R-squared-het). Methods described in Ahmad & Khan (2026).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.0.0)
+Imports: glmnet, metafor (>= 3.0.0)
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown, metadat
+Config/testthat/edition: 3
+RoxygenNote: 7.3.3
+VignetteBuilder: knitr
+URL: https://github.com/mahmood726-cyber/bapmr
+BugReports: https://github.com/mahmood726-cyber/bapmr/issues
+NeedsCompilation: no
+Packaged: 2026-03-19 17:24:00 UTC; user
+Author: Mahmood Ahmad [aut, cre] (ORCID: YOUR-ORCID-HERE, affiliation: Royal
+    Free London NHS Foundation Trust),
+  Laiba Khan [aut] (affiliation: Independent Researcher, London, UK)
+Maintainer: Mahmood Ahmad <mahmood726@gmail.com>

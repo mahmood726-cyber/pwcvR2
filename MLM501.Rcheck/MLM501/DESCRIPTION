@@ -1,0 +1,41 @@
+Package: MLM501
+Type: Package
+Title: Cochrane Multilevel Meta-Analysis Effects Table (501 Reviews)
+Version: 0.1.0
+Authors@R: c(
+    person("Mahmood", "Ahmad",
+           email = "mahmood726@gmail.com",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-HERE")),
+    person("Niraj", "Kumar", role = "aut"),
+    person("Laiba", "Khan", role = "aut"),
+    person("Bilaal", "Dar", role = "aut"),
+    person("Andrew", "Woo", role = "aut")
+  )
+Description: Builds a single multilevel meta-analysis effects table from
+    500+ Cochrane review datasets. Derives TE and seTE for dichotomous and
+    continuous outcomes, preserves moderators and provenance (DOI and URL),
+    and provides helpers to subset coherent cohorts (e.g., log odds ratios).
+    Includes MAFI (Meta-Analysis Fragility Index) for robustness assessment,
+    evidence pathway simulation, and Bayesian fragility analysis.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.1)
+Imports: utils, metafor, ggplot2
+Suggests: dplyr, tibble, clubSandwich, brms, rstan, knitr, rmarkdown,
+        testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+URL: https://github.com/mahmood726-cyber/MLM501
+BugReports: https://github.com/mahmood726-cyber/MLM501/issues
+RoxygenNote: 7.3.3
+NeedsCompilation: no
+Packaged: 2026-03-19 17:43:49 UTC; user
+Author: Mahmood Ahmad [aut, cre] (ORCID: YOUR-ORCID-HERE),
+  Niraj Kumar [aut],
+  Laiba Khan [aut],
+  Bilaal Dar [aut],
+  Andrew Woo [aut]
+Maintainer: Mahmood Ahmad <mahmood726@gmail.com>
+Built: R 4.5.2; ; 2026-03-19 17:43:59 UTC; windows
