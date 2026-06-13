@@ -1,0 +1,14 @@
+﻿
+# Truth-recovery yardstick -- pwcvR2  nsim=120
+R^2 = proportion of between-study heterogeneity explained by moderators
+
+   k    p   true R2 |     naive R2 |    pwcv R2
+  10    2      0.00 |        0.186 |      0.040
+  10    5      0.00 |        0.330 |      0.035
+  20    2      0.00 |        0.071 |      0.011
+  20    5      0.00 |        0.154 |      0.014
+  15    2      0.50 |        0.433 |      0.151
+  30    2      0.50 |        0.487 |      0.197
+
+(under true R2=0 the naive R2 is the OVERFITTING bias; pwcv_r2 should be ~0.
+ under true R2=0.5 both should be near 0.5.)
